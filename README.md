@@ -45,8 +45,11 @@ Modeler plugins
             Gathers voltage type, state
   - EatonPduEnvMap     :
             Gathers temperature, humidity from sensors
-
+            
 
 
 
 Some screenshots
+
+
+egg file (ZenPacks.community.EatonPdu-1.0.0-py2.7.egg) located in "dist" directory
