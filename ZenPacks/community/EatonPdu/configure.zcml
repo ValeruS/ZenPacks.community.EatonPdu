@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:zcml="http://namespaces.zope.org/zcml">
+
+    <configure zcml:condition="installed Products.Zuul">
+
+        <adapter factory=".info.EatonPduDeviceInfo"
+                 for=".EatonPduDevice.EatonPduDevice"
+                 provides=".interfaces.IEatonPduDeviceInfo"
+                 />
+
+        <adapter factory=".info.EatonPduOutletInfo"
+                 for=".EatonPduOutlet.EatonPduOutlet"
+                 provides=".interfaces.IEatonPduOutletInfo"
+                 />
+
+        <adapter factory=".info.EatonPduGroupInfo"
+                 for=".EatonPduGroup.EatonPduGroup"
+                 provides=".interfaces.IEatonPduGroupInfo"
+                 />
+
+        <adapter factory=".info.EatonPduEnvInfo"
+                 for=".EatonPduEnv.EatonPduEnv"
+                 provides=".interfaces.IEatonPduEnvInfo"
+                 />
+
+        <adapter factory=".info.EatonPduPowerInfo"
+                 for=".EatonPduPower.EatonPduPower"
+                 provides=".interfaces.IEatonPduPowerInfo"
+                 />
+
+        <adapter factory=".info.EatonPduVoltageInfo"
+                 for=".EatonPduVoltage.EatonPduVoltage"
+                 provides=".interfaces.IEatonPduVoltageInfo"
+                 />
+
+        <adapter factory=".info.EatonPduCurrentInfo"
+                 for=".EatonPduCurrent.EatonPduCurrent"
+                 provides=".interfaces.IEatonPduCurrentInfo"
+                 />
+
+
+        <browser:resourceDirectory
+                 name="EatonPdu"
+                 directory="resources"
+                 />
+
+        <browser:viewlet
+                 name="js-EatonPdu"
+                 for=".EatonPduDevice.EatonPduDevice"
+                 paths="/++resource++EatonPdu/EatonPdu.js"
+                 weight="10"
+                 manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                 class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                 permission="zope2.Public"
+                 />
+    </configure>
+</configure>
