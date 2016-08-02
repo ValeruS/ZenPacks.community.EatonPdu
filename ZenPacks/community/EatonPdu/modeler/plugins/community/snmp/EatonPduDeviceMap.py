@@ -72,6 +72,6 @@ class EatonPduDeviceMap(SnmpPlugin):
             om.setOSProductKey = MultiArgs(om.setOSProductKey, OSmanufacturer)
             om.inputType = self.inTypeMap.get(int(om.inputType), 'unknown')
         except (KeyError, IndexError, AttributeError, TypeError), errorInfo:
-            log.warn( ' Attribute error in LibraryHPDeviceMap modeler plugin %s', errorInfo)
+            log.warn( ' Attribute error in EatonPduDeviceMap modeler plugin %s', errorInfo)
         return om
 
